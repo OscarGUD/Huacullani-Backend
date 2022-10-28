@@ -1,13 +1,5 @@
 import { Schema, model, models } from 'mongoose'
-
-interface IWareHouse {
-  name: string
-  code: number
-  quantity: number
-  pricePerUnit: number
-  arrivalDate: string
-  total: number
-}
+import { IWareHouse } from '../types/types'
 
 const wareHouseSchema = new Schema<IWareHouse>({
   name: {
