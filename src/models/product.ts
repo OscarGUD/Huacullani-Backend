@@ -39,6 +39,7 @@ const productSchema = new Schema<IProduct>({
   },
   pdf: {
     name: String,
+    public_id: String,
     url: String
   }
 }, {

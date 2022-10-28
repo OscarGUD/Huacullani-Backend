@@ -16,7 +16,7 @@ export const oneWareHouse = async (req: Request, res: Response) => {
     res.json(wareHouse)
   } catch (error) {
     res.status(500)
-    console.log('ONE_WARE_HOUSE_ERROR', error)
+    console.log('GET_ONE_WARE_HOUSE_ERROR', error)
   }
 }
 
@@ -28,7 +28,7 @@ export const allWareHouse = async (req: Request, res: Response) => {
     res.json(wareHouses)
   } catch (error) {
     res.status(500)
-    console.log('ALL_WARE_HOUSE_ERROR', error)
+    console.log('GET_ALL_WARE_HOUSE_ERROR', error)
   }
 }
 

@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
+import fileUpload from 'express-fileupload'
 
 import connectionDB from './config/connectionDB'
 
@@ -12,6 +13,10 @@ app.use(express.json())
 dotenv.config()
 connectionDB()
 
+app.use(fileUpload({
+  useTempFiles : true,
+  tempFileDir : './src/temp'
+}));
 
 // * Config CORS
 // const whitelist = [process.env.FRONTEND_URL]
