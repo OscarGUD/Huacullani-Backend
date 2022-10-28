@@ -19,18 +19,17 @@ app.use(fileUpload({
 }));
 
 // * Config CORS
-// const whitelist = [process.env.FRONTEND_URL]
-// const options: cors.CorsOptions = {
-//   origin: function(origin, callback){
-//     if(whitelist.includes(<string>origin)){
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Error de Cors'))
-//     }
-//   },
-// }
-// app.use(cors(options))
-app.use(cors())
+const whitelist = [process.env.FRONTEND_URL]
+const options: cors.CorsOptions = {
+  origin: function(origin, callback){
+    if(whitelist.includes(<string>origin)){
+      callback(null, true)
+    } else {
+      callback(new Error('Error de Cors'))
+    }
+  },
+}
+app.use(cors(options))
 
 // * Routes
 app.use('/api/wareHouse', routesWareHouse)
